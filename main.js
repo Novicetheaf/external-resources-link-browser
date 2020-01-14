@@ -57,7 +57,7 @@ function writeToDocument(url) {
             });
             tableRows.push(`<tr>${dataRow}</tr>`);
         });
-
-        el.innerHTML = `<table>${tableHeaders}${tableRows}</table>${pagination}`;
+        // .replace replaces the comma in between forward slashes, 'g'  gets all instances of commas in the table, and reaplces it with a blank qoutation.
+        el.innerHTML = `<table>${tableHeaders}${tableRows}</table>${pagination}`.replace(/,/g, "");
     });
 }
